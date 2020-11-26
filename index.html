@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" title="index css" href="./css/normalize.css">
+    <link rel="stylesheet" title="index css" href="./css/index.css">
+    <script src="./js/index.js" ></script>
+    <script src="./js/p5.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title> Calentamiento global</title>
+</head>
+<body>
+<!-- ////////////// INICIO ////////////// -->
+    
+    <div class="center" id="homeATR" style="display: grid;">
+        <div class="">
+            <div class="posButtonArriba">
+                <button class="buttonMenu buttoneEnergias" onclick="botonE()" id="energiasB">ENERGIAS</button>
+            </div>
+            <div class="posButtonMendio">
+                <button class="buttonMenu buttoneResiduos posbuttoneResiduos" onclick="botonR()" id="residuosB">RESIDUOS</button>
+                <div class="posbuttonInicio">
+                    <button class="buttonMenu buttonInicio">EMISION </br> DE CO2</button>    
+                </div>
+                <button type="button" class="buttonMenu buttoneTransporte" onclick="botonT()" id="transporteB">TRANSPORTE</button>
+            </div>
+            <div class="posButtonAbajo">
+                <button class="buttonMenu buttoneIndustria" onclick="botonI()" id="industriaB">INDUSTRIA</button>
+                <button type="button" class="buttonMenu buttoneIndGanadera" onclick="botonG()" id="ganaderiaB">INDUSTRIA </br> GANADERA</button>
+            </div>
+        </div>
+    </div>
+
+<!-- /////////////////// GANADERIA ///////////////////-->
+<div class="ganaderia" style="display: none;" id="ganaderia1">
+    <div class="ganaderia_001 none" id="boton">
+        <div>
+            <div class="titleG">
+                <h2 class="">INDUSTRIA GANADERA</h2>
+            </div>
+        </div>
+        <div class="columDos" title="medio">
+            <div class="menulateral">
+                <button class="semi-circulo" type="button" onclick="menucerrado()" id="botonMenu"></button>
+            </div>
+            <div class="derecha" title="derecha"> 
+                <div class="s">
+                    <p class="pIndustria">Según el último inventario de GEI de 2016, el transporte </br> argentino emitio un total de  136,0  de mtco2e (Millones de </br>toneladas de CO2). </p>
+                </div>
+                <div class="Grafico-01G">
+                    <img src="./img/ganaderia/ganadera_grafico_00.svg" alt="">
+                </div>
+            </div>
+            <div class="borderGanaderia" title="izquierda">
+                <h4>La industria se conforma por</h4>
+                <div class="columTres">
+                    <div>
+                        <img src="./img/ganaderia/ganaderia_00.svg" alt="">
+                        <p>Fuente agragadas y </br> fuentes de emisión de </br>n2o-CO2 en la tierra</br> agregadas</p>
+                    </div>
+                    <div>
+                        <img src="./img/ganaderia/ganaderia_01.svg" alt="">
+                        <p>Tierra</p>
+                    </div>
+                    <div>
+                        <img src="./img/ganaderia/ganaderia_02.svg" alt="">
+                        <p>Ganado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fin">
+            <h4 class="footerEmpezar">¡Enterate de más jugando a esta trivia!</h4>
+            <button class="buttonEmpezarG" type="button" onclick="next1G()" id="empezarG">EMPEZAR</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- MENU LATERAL-->
+
+<div class="menulateralClickon" style="display: none;" id="menulateral2">
+    <button class="semi-circulo" type="button" onclick="menuabierto()" id="botonMenuA"></button>
+</div>
+  <!--ACT 1-->
+  <div class="ganaderia02 ganaderia_001" style="display:none;" id="ganaderia2">
+    <div class="">
+        <div class="title_pG">
+            <h2>¿Qué tipo de ganadería emitió más mtCO2e en este año?</h2>
+        </div>
+    </div>
+    <div class="wrapper"> 
+        <div class="one">
+            <p>Clickeá y suma o resta el porcentaje de cada una .</p>
+        </div>
+         <div class="two">
+             <button class="ayudaG" type="button" onclick="ayuda1G()" id="ayuda1G">?</button>
+        </div>
+        <div class="three num_actG">
+            <p><span>1</span>/ <span>3</span></p>
+         </div>
+    </div>
+    <div class="" title="juego">
+        <div>
+            <div>
+                <svg>
+                    <circle cx="80" cy="80" r="40" fill='red' stroke-width="20" id="cir" stroke='black'/ >
+                </svg>
+            </div>
+            <div>
+                <input type="button" value="-" id="moins" onclick="minus()">
+                <input type="button" value="+" id="plus" onclick="plus()">
+            </div>
+
+        </div>        
+    </div>
+    <div>
+        <button class="responderG"> Responder </button>
+    </div>
+    
+</div>
+
+<!-- POP UP AYUDA 1 DE GANADERIA-->
+<div class="ayuda" style= "display: none;" id="ayudar"> 
+    <div class="ayuda1G">
+        <div class="arribaG">
+            <div class="tituloAyudaG">
+                <p class="">¿CÓMO JUGAR?</p>
+            </div>
+            <img id="cerrarG" class="cerrarG" type="button" onclick="cerrar1G()" src="./img/ganaderia/cerrar.svg">
+        </div>
+        <div class="abajoG">
+            <div class="wrapperAyuda">
+                <div class="oneAyudaG">
+                    <p>1) Sumar o restar al</br>clickear en los íconos.  </p>
+                    <img class="imgAyudaG" src="./img/ganaderia/ayuda1G.svg">
+                </div>
+                <div class="oneAyudaG">
+                    <p>2) El ciruclo se agrandara</br>o disminuira.</p>
+                    <img class="imgAyudaG" src="./img/ganaderia/ayuda2G.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="ocultar">
+    
+        <!--ACT 2-->
+        <div class="ganaderia02 ganaderia_001">
+            <div class="">
+                <div class="title_pG">
+                    <h2>¿En qué provincias se encuentra la produccién láctea en Argentina?</h2>
+                </div>
+            </div>
+            <div class="wrapper"> 
+                <div class="one">
+                    <p>Marcá las provincias en donde se encuentra este tipo de producción.</p>
+                </div>
+                 <div class="two ayudaG">
+                    <span class="">?</span>
+                </div>
+                <div class="three num_actG">
+                    <p><span>2</span>/ <span>3</span></p>
+                 </div>
+            </div>
+            <div class="" title="juego">
+                <div class="wrapper5">
+                    <div class="mapa">
+                      <img src="./img/ganaderia/mapa.svg">
+                    </div>
+                    <div class="treferenciasG">
+                       <img src="./img/ganaderia/referencias.svg">
+                    </div>
+                </div>
+                <div>
+                    <button class="responderG"> Responder </button>
+                </div>
+            </div>
+            
+        </div>
+    
+        <!-- ACT 3-->
+        <div class="ganaderia03 ganaderia_001">
+        <div class="">
+            <div class="title_pG">
+                <h2>¿Cómo podes ayudar?  </h2>
+            </div>
+        </div>
+        <div class="wrapper"> 
+            <div class="one">
+                <p>Selecciona la opción que creas más eficiente para el calentamiento global.</p>
+            </div>
+             <div class="two ayudaG">
+                <span class="">?</span>
+            </div>
+            <div class="three num_actG">
+                <p><span>3</span>/ <span>3</span></p>
+             </div>
+        </div>
+        <div class="" title="juego">
+            <div class="wrapper5">
+                <div class="oneG">
+                    <img src="./img/ganaderia/ganaderia_solucion01 (2).svg">
+                    <p class="tit-card">Llevar una dieta</br>baja en carnes</p>
+                </div>
+                <div class="twoG">
+                    <img src="./img/ganaderia/ganaderia_solucion02.svg">
+                    <p class="tit-card">Sistemas de </br>pastoreo</p>
+                </div>
+            </div>
+            <div>
+                <button class="responderG"> Responder </button>
+            </div>
+        </div>
+        </div>
+    
+    </div>
+
+<!-- ////////////////////////////////////// TRANSPORTE ////////////////////////////////////////-->
+<div class="rowTransporte" style="display: none;" id="transporte1">
+    <div class="transporte001">
+        <div>
+            <div class="titleT">
+                <h1>TRANSPORTE</h1>
+            </div>
+        </div>
+        <div class="columDos">
+            <div class="">
+                <div class="pTransporte">
+                    <p>Según el último inventario de GEI de 2016, el transporte argentino emitió </br>un total de 50,0 de mtCO2e (Millones de toneladas de CO2).</p>
+                </div>
+                <div class="graficoTransporte">
+                    <img src="./img/transporte/transporte_grafico_000.svg" alt="">
+                </div>
+            </div>
+            <div class="marcoTransporte">
+                <h2>En los mismos entran</h2>
+                <div class="filaDos">
+                    <img src="./img/transporte/transporte_avion.svg" alt="">
+                    <h4>Aviación civil</h4>
+                </div>
+                <div class="filaDos">
+                    <img src="./img/transporte/transporte_colectivo.svg" alt="">
+                    <h4>Transporte terrestre</h4>
+                </div>
+                <div class="filaDos" style="min-width: 18rem;">
+                    <img src="./img/transporte/transporte_crucero.svg" alt="">
+                    <h4>Navegación maritima y fluvial</h4>
+                </div>
+                <div class="filaDos">
+                    <img src="./img/transporte/transporte_tren.svg" alt="">
+                    <h4>Ferrocarriles</h4>
+                </div>
+                <div class="filaDos">
+                    <img src="./img/transporte/transporte_globo.svg" alt="">
+                    <h4>Otro tipo de transporte</h4>
+                </div>
+            </div>
+        </div>
+        <div class="fin">
+            <h4 class="footerEmpezar">¡Enterate de más jugando a esta trivia!</h4>
+            <button class="buttonEmpezarT" type="button" id="empezarT" onclick="next1T()">EMPEZAR</button>
+        </div>
+    </div>
+</div>
+
+<!--ACT 1 TRANSPORTE-->
+<div class="rowTransporte_01 transporte001" style="display: none;" id="transporte2">
+    <div class="">
+      <div class="title_pT">
+          <h2>¿Cúanto crees que emite en total el transporte en Argentina?</h2>
+       </div>
+    </div>
+    <div class="wrapper"> 
+        <div class="one">
+            <p>Desliza los íconos para determinarlo.</p>
+        </div>
+        <div class="two">
+            <button class="ayudaT" type="button" onclick="ayuda1T()" id="ayuda1T">?</button>
+        </div>
+        <div class="three num_actT">
+            <p><span>1</span>/ <span>3</span></p>
+        </div>
+    </div>
+    <div class="" title="juego">
+        <div class="actividad1T">
+            <div class="triangle-down-right"></div>
+            <div class="line controls">
+                <input class="progress" step=".001" type="range" min="0" max="100" value="0"> 
+            </div>
+        </div>
+        <div>
+            <button class="responderT"> Responder </button>
+        </div> 
+    </div>
+</div>
+
+<!--POP UP DE AYUDA DE ACT 1 DE TRANSPORTE-->
+
+<div class="ayudarAct1T" style= "display: none;" id="ayudarAct1T"> 
+    <div class="ayuda1T">
+        <div class="arribaT">
+            <div class="tituloAyudaT">
+                <p class="">¿CÓMO JUGAR?</p>
+            </div>
+            <img id="cerrarT" class="cerrarT" type="button" onclick="cerrar1T()" src="./img/transporte/cerrar.svg">
+        </div>
+        <div class="abajoG">
+            <div class="wrapperAyuda3">
+                <div class="oneAyudaT">
+                    <p>1) Mover el ciruclo verde </br>de izquierda a derecha a </br>gusto.</p>
+                    <img class="imgAyudaT" height="160" width="180" src="./img/transporte/ayudaT1.svg">
+                </div>
+                <div class="oneAyudaT">
+                    <p>2) Detener donde quieras.</p>
+                    <img class="imgAyudaT" src="./img/transporte/ayudaT2.svg">
+                </div>
+                <div class="oneAyudaT">
+                    <p>2) Una vez detenido se</br>marcará el porcentaje.</p>
+                    <img class="imgAyudaT" src="./img/transporte/ayudaT3.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="ocultar"> 
+        <!--ACT 2-->
+        <div class="rowTransporte_02 transporte001">
+        <div class="">
+            <div class="title_pT">
+                <h2>¿Cuál transporte crees que emite más CO2 por kilometro?  </h2>
+             </div>
+          </div>
+          <div class="wrapper"> 
+              <div class="one">
+                  <p>Desliza los ícono de izquierda a derecha para determinarlo.</p>
+              </div>
+              <div class="two ayudaT">
+                  <span class="">?</span>
+              </div>
+              <div class="three num_actT">
+                  <p><span>2</span>/ <span>3</span></p>
+              </div>
+          </div>
+          <div class="" title="juego">
+            <div class="act2T">
+                <img src="./img/transporte/act2.svg">
+            </div>
+            <div>
+                <button class="responderT"> Responder </button>
+            </div>
+        </div>
+        </div>
+       <!--ACT 3--> 
+        <div class="rowTransporte_03 transporte001">
+            <div class="">
+              <div class="title_pT">
+                  <h2>¿Còmo podes ayudar?</h2>
+               </div>
+            </div>
+            <div class="wrapper"> 
+                <div class="one">
+                    <p>¿Cuál te parece que es la solucion más eficiente? ¡Selecciona los puntos que quieras pintar para ranquearlas!</p>
+                </div>
+                <div class="two ayudaT">
+                    <span class="">?</span>
+                </div>
+                <div class="three num_actT">
+                    <p><span>3</span>/ <span>3</span></p>
+                </div>
+            </div>
+            <div class="" title="juego">
+                <div class="wrapper4">
+                    <div class="oneT">
+                        <img src="./img/transporte/transporte_bici.svg" width="100" height="100">
+                        <p class="tit-card">Usar la bicicleta</p>
+                        <p>Nivel de eficiencia</p>
+                        <img src="./img/transporte/puntitos.svg">
+                    </div>
+                    <div class="twoT">
+                        <img src="./img/transporte/micro.svg" width="100" height="100">
+                        <p class="tit-card">Usar el transporte</br>público</p>
+                        <p>Nivel de eficiencia</p>
+                        <img src="./img/transporte/puntitos.svg">
+                    </div>
+                    <div class="threeT">
+                        <img src="./img/transporte/transporte_tren.svg" width="100" height="100">
+                        <p class="tit-card">Usar transportes</br>eléctricos</p>
+                        <p>Nivel de eficiencia</p>
+                        <img src="./img/transporte/puntitos.svg">
+                    </div>
+                </div>
+            
+                <div>
+                    <button class="responderT"> Responder </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- /////////////////// INDUSTRIA ///////////////////-->
+<div class= "rowIndustria" style="display: none;" id="industria1">
+    <div class= "industria001">
+        <div>
+            <div class="titleI">
+                <h1>INDUSTRIA</h1> 
+            </div>
+        </div>
+        <div class="columDos">
+            <div class="derecha">
+            <div class="">
+                <div>
+                    <p class="ind">Según el último inventario de GEI de 2016, los procesos industriales y el uso </br> de sus productos en Argentina emitió un total de 20,1  de mtco2e</br> (Millones de toneladas de CO2). </p>
+                </div>
+                <div class="graficoInd">
+                    <img src="./img/industria/botones_grafico/graficoInd.svg">
+                </div>
+            </div>
+        </div>
+        
+        <div class="borderInd" title="izquierda">
+            <h4>Se conforma por</h4>
+            <div class="columTres">
+                <div>
+                    <img src="./img/industria/botones_grafico/conformadosInd.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <div class="fin">
+            <h4 class="footerEmpezar">¡Enterate de más jugando a esta trivia!</h4>
+            <button class="buttoneTransporte buttonEmpezarI" onclick="next1I()" id="empezarI" type="button">EMPEZAR</button>
+        </div>
+    </div>
+</div>
+
+ <!--ACT 1-->
+ <div class="rowIndustria_01 industria001" style="display: none;" id="industria2">
+    <div class="">
+        <div class="title_pI">
+            <h2>¿Cúanto crees que emite en total la industria en Arg.?</h2>
+        </div>
+    </div>
+    <div class="wrapper"> 
+        <div class="one">
+            <p>Desliza los íconos para determinarlo.</p>
+        </div>
+         <div class="two">
+            <button class="ayudaI" type="button" onclick="ayuda1I()" id="ayuda1I">?</button>
+        </div>
+        <div class="three num_actI">
+            <p><span>1</span>/ <span>3</span></p>
+         </div>
+    </div>
+    <div class="" title="juego">
+        <div class="wrapper7">
+            <div class="act1T">
+                <img src="./img/industria/industria_grafico.svg">
+            </div>
+            <div class="">
+                <div class="miniwrapperI">
+                    <div class="porcentaje_act1T">
+                        <p class="">25%</p>
+                    </div>
+                    <div class="referencia_act1T">
+                        <p class="">Industria de los metales</p>
+                    </div>
+                </div>
+                <div class="miniwrapperI">
+                    <div class="porcentaje_act1T">
+                        <p class="">25%</p>
+                    </div>
+                    <div class="referencia_act1T">
+                        <p class="">industria química</p>
+                    </div>
+                </div>
+                <div class="miniwrapperI">
+                    <div class="porcentaje_act1T">
+                        <p class="">25%</p>
+                    </div>
+                    <div class="referencia_act1T">
+                        <p class="">Industria de los minerales</p>
+                    </div>
+                </div>
+                <div class="miniwrapperI">
+                    <div class="porcentaje_act1T">
+                        <p class="">25%</p>
+                    </div>
+                    <div class="referencia_act1T">
+                        <p class="">Uso de productos</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <button class="responderI"> Responder </button>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+
+<!--POP UP DE AYUDA DE ACT 1 DE INDUSTRIA-->
+<div class="ayudarAct1I" style= "display: none;" id="ayudarAct1I"> 
+    <div class="ayuda1I">
+        <div class="arribaT">
+            <div class="tituloAyudaI">
+                <p class="">¿CÓMO JUGAR?</p>
+            </div>
+            <img id="cerrarI" class="cerrarT" type="button" onclick="cerrar1I()" src="./img/industria/cerrar.svg">
+        </div>
+        <div class="abajoG">
+            <div class="wrapperAyuda3">
+                <div class="oneAyudaI">
+                    <p>1) Mover el ciruclo a </br>gusto.</p>
+                    <img class="imgAyudaT" height="160" width="180" src="./img/industria/ayudaI1.svg">
+                </div>
+                <div class="oneAyudaI">
+                    <p>2) Detener crean que sea</br>la respuesta correcta.</p>
+                    <img class="imgAyudaT" height="160" width="180" src="./img/industria/ayudaI2.svg">
+                </div>
+                <div class="oneAyudaI">
+                    <p>2) Una vez detenido se</br>marcará el porcentaje.</p>
+                    <img class="imgAyudaT" src="./img/industria/ayudaI3.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ocultar" >   
+    <!--ACT 2-->
+    <div class="rowIndustria_02 industria001">
+        <div class="">
+            <div class="title_pI">
+                <h2>¿Qué actividad de cada área contamina más? </h2>
+            </div>
+        </div>
+        <div class="wrapper"> 
+            <div class="one">
+                <p>Selecciona una actividad de cada color para determinarlo.</p>
+            </div>
+             <div class="two ayudaI">
+                <span class="">?</span>
+            </div>
+            <div class="three num_actI">
+                <p><span>2</span>/ <span>3</span></p>
+             </div>
+        </div>
+        <div class="" title="juego">
+            <div class="">
+                <div style="display:inline-flex">
+                    <button class="celestito"> uso del sustitutos de SAO</button>
+                    <button class="celestito"> Uso de prod. no enegéticos de combustible y solvente</button>
+                </div>
+            </div>
+            <div class="">
+                <div style="display:inline-flex">
+                    <button class="rosita"> Producción de ceniza de sosa</button>
+                    <button class="rosita"> Producción de amoníaco</button>
+                    <button class="rosita"> Producción fluoroquímica</button>
+                </div>
+            </div>
+            <div class="">
+                <div style="display:inline-flex">
+                    <button class="rosita"> Producción de carburo</button>
+                    <button class="rosita"> Producción petroquímica</button>
+                    <button class="rosita"> Producción de ácido nítrico</button>
+                </div>
+            </div>
+            <div class="">
+                <div style="display:inline-flex">
+                    <button class="violetita"> Producción de cemento</button>
+                    <button class="violetita"> Producción de cal</button>
+                    <button class="violetita"> Otros usos de los carbonatos</button>
+                </div>
+            </div>
+            <div class="">
+                <div style="display:inline-flex">
+                    <button class="naranjita"> Otras industrias de los metales</button>
+                    <button class="naranjita"> Producción de aluminio</button>
+                    <button class="naranjita"> Producción de hierro y acero</button>
+                </div>
+            </div>
+            <div>
+                <button class="responderI"> Responder </button>
+            </div>
+        </div>
+    </div>
+     <!-- ACT 3-->
+     <div class="rowIndustria_03 industria001">
+        <div class="">
+            <div class="title_pI">
+                <h2>¿Cómo podes ayudar?  </h2>
+            </div>
+        </div>
+        <div class="wrapper"> 
+            <div class="one">
+                <p>¿Cuál te parece que es la solucion más eficiente? ¡Selecciona los puntos que quieras pintar para ranquearlas!</p>
+            </div>
+             <div class="two ayudaI">
+                <span class="">?</span>
+            </div>
+            <div class="three num_actI">
+                <p><span>3</span>/ <span>3</span></p>
+             </div>
+        </div>
+        <div class="" title="juego">
+            <div class="wrapper5">
+                <div class="oneI">
+                    <img src="./img/industria/industria_solucion01.svg">
+                    <p class="tit-card">Usar materiales</br> ecológicos</p>
+                    <p>Nivel de eficiencia</p>
+                    <img src="./img/industria/puntitos.svg">
+                </div>
+                <div class="twoI">
+                    <img src="./img/industria/industria_solucion02.svg">
+                    <p class="tit-card">Firmar peticiones</br>para medidas</br>eco-friendly</p>
+                    <p>Nivel de eficiencia</p>
+                    <img src="./img/industria/puntitos.svg">
+                </div>
+            </div>
+            <div>
+                <button class="responderI"> Responder </button>
+            </div>
+        </div>
+     </div>
+    </div>
+
+<!-- /////////////////// RESIDUOS ///////////////////-->
+
+<div class= "rowIResidous" style="display: none;" id="residuos1">
+    <div class= "residuos001">
+        <div>
+            <div class="titleR">
+                <h1>RESIDUOS</h1> 
+            </div>
+        </div>
+        <div class="columDos">
+            <div class="derecha">
+            <div class="res">
+                <div>
+                    <p class="">Según el último inventario de GEI de 2016, los residuos argentinos</br> emitidos son  un total de  15,0  de mtco2e (Millones </br> de toneladas de CO2). </p>
+                </div>
+                <div class="graficoR">
+                    <img src="./img/residuos/boton_grafico/referencias.svg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="" title="izquierda">
+
+            <div class="columTres">
+                <div>
+                    <img src="./img/residuos/boton_grafico/grafico.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <div class="fin">
+            <h4 class="footerEmpezar">¡Enterate de más jugando a esta trivia!</h4>
+            <button class="buttoneTransporte buttonEmpezarR " type="button" onclick="next1R()" id="empezarR">EMPEZAR</button>
+        </div>
+    </div>
+ </div>
+
+ <!--ACT 1-->
+ <div class="rowResiduos_01 residuos001" style="display: none;" id="residuos2">
+    <div class="">
+        <div class="title_pR">
+            <h2>¿Cuanto residuos creés que genera un persona en Argentina?</h2>
+        </div>
+    </div>
+    <div class="wrapper"> 
+        <div class="one">
+            <p>Suma o resta cuantos kg (kilogramo) de residuos per cápita.</p>
+        </div>
+         <div class="two">
+            <button class="ayudaR" type="button" onclick="ayuda1R()" id="ayuda1R">?</button>
+        </div>
+        <div class="three num_actR">
+            <p><span>1</span>/ <span>3</span></p>
+         </div>
+    </div>
+    <div class="" title="juego">
+        <div>
+            <img src="./img/residuos/residuos_persona.svg" alt="">
+            <img src="./img/residuos/residuos_igual.svg" alt="">
+            <img src="./img/residuos/residuos_tacho.svg" alt="">            
+        </div>
+        <div class="wrapper2">
+            <div class="kilo">
+                <p>1Kg</p>
+            </div>
+            <div class="mas-menos">
+                <button class="menos">-</button>
+                <button class="mas">+</button>
+            </div>
+        </div>
+        <div>
+            <button class="responderR"> Responder </button>
+        </div>
+    </div>
+</div>
+
+<!--POP UP AYUDA ACT 1 RESIDUOS-->
+
+<div class="ayudarAct1R" style= "display: none;" id="ayudarAct1R"> 
+    <div class="ayuda1R">
+        <div class="arribaG">
+            <div class="tituloAyudaR">
+                <p class="">¿CÓMO JUGAR?</p>
+            </div>
+            <img id="cerrarR" class="cerrarR" type="button" onclick="cerrar1R()" src="./img/residuos/cerrar.svg">
+        </div>
+        <div class="abajoG">
+            <div class="wrapperAyuda">
+                <div class="oneAyudaR">
+                    <p>1) Sumar o restar hasta</br>tener la cantidad deseada.  </p>
+                    <img class="imgAyudaR" width="170"src="./img/residuos/ayudaR1.svg">
+                </div>
+                <div class="oneAyudaR">
+                    <p>2) Una vez listo,</br>resporder.</p>
+                    <img class="imgAyudaR" width="170" src="./img/residuos/ayudaR1.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="ocultar">
+     <!--ACT 2-->
+    <div class="rowResiduos_02 residuos001">
+        <div class="">
+            <div class="title_pR">
+                <h2>¿Cúal crees que es el que representa el mayor tipo de descarga en un hogar?</h2>
+            </div>
+        </div>
+        <div class="wrapper"> 
+            <div class="one">
+                <p>Elegì las respuesta correcta.</p>
+            </div>
+             <div class="two ayudaR">
+                <span class="">?</span>
+            </div>
+            <div class="three num_actR">
+                <p><span>2</span>/ <span>3</span></p>
+             </div>
+        </div>
+        <div class="" title="juego">
+            <div class="wrapper3">
+                <div class="one-one">
+                    <p class="juego-preg">Cloaca</p>
+                </div>
+                <div class="one-two">
+                    <p class="juego-preg">Pozo ciego</p>
+                </div>
+            </div>
+            <div class="wrapper3">
+                <div class="two-one">
+                    <p class="juego-preg">Rios</p>
+                </div>
+                <div class="two-two">
+                    <p class="juego-preg">Lagos</p>
+                </div>
+            </div>
+            <div>
+                <button class="responderR"> Responder </button>
+            </div>
+        </div>
+     </div>
+    <!--ACT 3-->
+     <div class="rowResiduos_03 residuos001">
+        <div class="">
+            <div class="title_pR">
+                <h2>¿Còmo podes ayudar?</h2>
+            </div>
+        </div>
+        <div class="wrapper"> 
+            <div class="one">
+                <p>¿Cuál te parece que es la solucion más eficiente? ¡Selecciona los puntos que quieras pintar para ranquearlas!</p>
+            </div>
+             <div class="two ayudaR">
+                <span class="">?</span>
+            </div>
+            <div class="three num_actR">
+                <p><span>3</span>/ <span>3</span></p>
+             </div>
+        </div>
+        <div class="" title="juego">
+            <div class="wrapper4">
+                <div class="oneR">
+                    <img src="./img/residuos/residuos_solucion01.svg" width="100" height="100">
+                    <p class="tit-card">Separar los </br>residuos</p>
+                    <p>Nivel de eficiencia</p>
+                    <img src="./img/residuos/puntitos.svg">
+                </div>
+                <div class="twoR">
+                    <img src="./img/residuos/residuos_solucion02.svg" width="100" height="100">
+                    <p class="tit-card">No separar los </br> residuos en casa</p>
+                    <p>Nivel de eficiencia</p>
+                    <img src="./img/residuos/puntitos.svg">
+                </div>
+                <div class="threeR">
+                    <img src="./img/residuos/residuos_solucion03.svg" width="100" height="100">
+                    <p class="tit-card">Usar bolsas</br>eco-friendly</p>
+                    <p>Nivel de eficiencia</p>
+                    <img src="./img/residuos/puntitos.svg">
+                </div>
+            </div>
+            
+            <div>
+                <button class="responderR"> Responder </button>
+            </div>
+        </div>
+     </div>
+    </div>
+
+<!-- /////////////////// ENERGIA ///////////////////-->
+
+<div class= "rowEnegia" style="display: none;" id="energia1">
+    <div class= "energia001">
+        <div>
+            <div class="titleE">
+                <h1>ENERGÍA</h1> 
+            </div>
+        </div>
+        <div class="columDos">
+            <div class="derecha">
+            <div class="res">
+                <div>
+                    <p class="">Según el último inventario de GEI de 2016, el sistema de energía</br> argentino emitio un total de  193,0  de mtco2e (Millones</br> de toneladas de CO2). </p>
+                </div>
+                <div class="graficoR">
+                    <img src="./img/Energia/boton_graficos/energia_letras.svg" alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="" title="izquierda">
+
+            <div class="columTres">
+                <div>
+                    <img src="./img/Energia/boton_graficos/asd.png" width="500" height="500" alt="">
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <div class="fin">
+            <h4 class="footerEmpezar">¡Enterate de más jugando a esta trivia!</h4>
+            <button class="buttoneTransporte buttonEmpezarE" type="button" onclick="next1E()" id="empezarE">EMPEZAR</button>
+        </div>
+    </div>
+
+</div>
+ 
+     <!--ACT 1-->
+     <div class="rowEnergía_01 energia001" style="display: none;" id="energia2">
+        <div class="">
+            <div class="title_pE">
+                <h2>¿Qué industria genera más mtCo2e por año?</h2>
+            </div>
+        </div>
+        <div class="wrapper"> 
+            <div class="one">
+                <p>Elegí la que creas que más dioxido de carbono emita.</p>
+            </div>
+             <div class="two">
+                <button class="ayudaE" type="button" onclick="ayuda1E()" id="ayuda1E">?</button>
+            </div>
+            <div class="three num_actE">
+                <p><span>1</span>/ <span>3</span></p>
+             </div>
+        </div>
+        <div class="" title="juego">
+            <div class="act1E">
+                <img src="./img/Energia/act1.svg">
+            </div>
+            <div>
+                <button class="responderE"> Responder </button>
+            </div>
+        </div>
+     </div>
+    
+    
+   <!--POP UP AYUDA ACT 1 ENERGIA-->
+
+   <div class="ayudarAct1E" style= "display: none;" id="ayudarAct1E"> 
+    <div class="ayuda1E">
+        <div class="arribaG">
+            <div class="tituloAyudaE">
+                <p class="">¿CÓMO JUGAR?</p>
+            </div>
+            <img id="cerrarE" class="cerrarE" type="button" onclick="cerrar1E()" src="./img/Energia/cerrar.svg">
+        </div>
+        <div class="abajoG">
+            <div class="wrapperAyuda">
+                <div class="oneAyudaE">
+                    <p>1) Mover el criculo</br>verticalmente.</p>
+                    <img class="imgAyudaE" width="170" src="./img/Energia/ayudaE1.svg">
+                </div>
+                <div class="oneAyudaE">
+                    <p>2) Detener para marcar</br>el número deseado.</p>
+                    <img class="imgAyudaE" width="170" src="./img/Energia/ayudaE2.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+     <div class="ocultar">
+    
+     <!-- ACT 2-->
+     <div class="rowEnergia_02 energia001">
+        <div class="">
+            <div class="title_pE">
+                <h2>¿Qué categoría emite más mtCO2e?  </h2>
+            </div>
+        </div>
+        <div class="wrapper"> 
+            <div class="one">
+                <p>Elegì las respuesta correcta.</p>
+            </div>
+             <div class="two ayudaE">
+                <span class="">?</span>
+            </div>
+            <div class="three num_actE">
+                <p><span>2</span>/ <span>3</span></p>
+             </div>
+        </div>
+        <div class="" title="juego">
+            <div class="wrapper3">
+                <div class="one-one">
+                    <p class="juego-preg">Industria ganadera</p>
+                </div>
+                <div class="one-two">
+                    <p class="juego-preg">Industria manufacturera</p>
+                </div>
+            </div>
+            <div class="wrapper3">
+                <div class="two-one">
+                    <p class="juego-preg">Otros sectores (hogar)</p>
+                </div>
+                <div class="two-two">
+                    <p class="juego-preg">Otras emisiones (gas)</p>
+                </div>
+            </div>
+            <div>
+                <button class="responderE"> Responder </button>
+            </div>
+        </div>
+     </div>
+    <!--ACT 3-->
+     <div class="rowEnergia_03 energia001">
+        <div class="">
+            <div class="title_pE">
+                <h2>¿Cómo podes ayudar?  </h2>
+            </div>
+        </div>
+        <div class="wrapper"> 
+            <div class="one">
+                <p>¿Cuál te parece que es la solucion más eficiente? ¡Selecciona los puntos que quieras pintar para ranquearlas!</p>
+            </div>
+             <div class="two ayudaE">
+                <span class="">?</span>
+            </div>
+            <div class="three num_actE">
+                <p><span>3</span>/ <span>3</span></p>
+             </div>
+        </div>
+        <div class="" title="juego">
+            <div class="wrapper5">
+                <div class="oneE">
+                    <img src="./img/Energia/energia_solucion01.svg">
+                    <p class="tit-card">Usar transportes</br> eléctricos</p>
+                    <p>Nivel de eficiencia</p>
+                    <img src="./img/Energia/puntitos.svg">
+                </div>
+                <div class="twoE">
+                    <img src="./img/Energia/energia_solucion02.svg">
+                    <p class="tit-card">Cuidar el uso de </br>energías en casa</p>
+                    <p>Nivel de eficiencia</p>
+                    <img src="./img/Energia/puntitos.svg">
+                </div>
+            </div>
+            <div>
+                <button class="responderE"> Responder </button>
+            </div>
+        </div>
+     </div>
+    
+    </div>
+
+</body>
+</html>
+
